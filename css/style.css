@@ -1,0 +1,171 @@
+@font-face {
+    font-family: "outfit";
+    src: url("/font/Outfit-VariableFont_wght.ttf");
+    backface-visibility: hidden;
+}
+
+@keyframes vibrate-1 {
+    0% {
+        transform: translate(0)
+    }
+
+    20% {
+        transform: translate(-2px, 2px)
+    }
+
+    40% {
+        transform: translate(-2px, -2px)
+    }
+
+    60% {
+        transform: translate(2px, 2px)
+    }
+
+    80% {
+        transform: translate(2px, -2px)
+    }
+
+    100% {
+        transform: translate(0)
+    }
+}
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #404258;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+    font-family: "outfit";
+
+
+
+}
+
+
+.vibrate-1 {
+    animation: vibrate-1 4s ease-in-out infinite alternate both
+}
+
+.action {
+    position: absolute;
+    top: 25%;
+    right: 50%;
+    transform: translateX(50%);
+}
+
+.action .profile {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+
+
+}
+
+.action .profile:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    box-shadow: 0px 8px 19px 1px rgba(0, 0, 0, 0.26);
+    user-select: none;
+
+}
+
+.action .profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+
+}
+
+.action .menu {
+    background-color: #474E68;
+    position: absolute;
+    top: 115px;
+    right: 0;
+    max-width: 250px;
+    border-radius: 15px;
+
+    opacity: 0;
+    display: hidden;
+    user-select: none;
+
+    transition: all 0.2s ease-out;
+
+
+
+}
+
+
+
+.action .menu::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #474E68;
+    top: -9px;
+    right: 30px;
+    transform: rotate(45deg);
+    border-radius: 5px;
+
+}
+
+.action .menu.active.active-display {
+    display: block;
+}
+
+.action .menu.active {
+
+    opacity: 1;
+    box-shadow: 0px 8px 19px 1px rgba(0, 0, 0, 0.096);
+}
+
+.action .menu h3 {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding-bottom: 10px;
+}
+
+.action .menu h3 span {
+    font-size: 0.8rem;
+    color: rgba(212, 209, 209, 0.596);
+}
+
+.action .menu ul {
+    list-style-type: none;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.action .menu ul li {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    color: #848db1;
+    font-weight: 900;
+}
+
+.action .menu ul li:last-child {
+    margin-bottom: 20px;
+}
+
+.action .menu ul li img {
+    width: 15px;
+    opacity: 0.4;
+    margin-right: 10px;
+}
